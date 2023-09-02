@@ -12,41 +12,23 @@
   <link rel="stylesheet" href="../../css/styles.css">
   <!--FontAwesome-->
   <script src="https://kit.fontawesome.com/53a5609ba1.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
 </head>
 
 <body>
+  <section class="modal-comprar-body d-none">
+    <!-- SE RELLENA CON JS -->
+  </section>
   <div class="alert-agregado bounce-top d-none">
     <p class='a-agregado'>Producto agregado al carrito</p>
 </div>
-  <section class="modal-comprar-body d-none">
-
-    <!-- <div class="position-modals">
-      <div><button type="button" class="btn-close"></button></div>
-      <div class="modal-comprar">
-        <img src="../productos/botas/botas-0.webp" alt="">
-        <div class="modal-text text-center">
-          <h2>bota duki</h2>
-          <ul class="lista-talles">
-            SE RELLENA CON JS
-          </ul>
-          </p>
-          <div class="d-flex justify-content-around align-items-baseline gap-3">
-            <p>
-              Precio: $${precio}
-            </p>
-            <button class="btn btn-outline-dark btn-sm boton-agregar-carrito"><i class="fa-solid fa-cart-shopping"></i></button></button>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-  </section>
   <header>
     <!--Nav-->
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid ">
-        <h1 class="navbar-brand" href="#"><a href="../../index.html"><img src="../../img/logo-sin.fondo.png"
-              alt="logo"></a></h1>
+        <h1 class="navbar-brand"><a href="../../index.html"><img src="../../img/logo-sin.fondo.png" ></a></h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -54,7 +36,7 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul class="navbar-nav mx-3 gap-3">
             <li class="nav-item">
-              <a class="nav-link" href="./productos.html">Productos</a>
+              <a class="nav-link" href="../productos-page/productos.html">Productos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Ayuda</a>
@@ -74,69 +56,12 @@
     </nav>
   </header>
   <main>
-    <div class="container">
-      <div class="mb-3">
-        <input type="email" class="form-control" id="buscador" placeholder="Busca tu producto favorito">
-      </div>
-    </div>
-    <!--CONTENEDOR PRINCIPAL-->
-    <div class="contenedor-principal container">
+    <section class="final" id="final">
+      
 
+    </section>
 
-      <!--FILTROS-->
-      <div class="filtros-aplicados">
-        <!--Aca se rellena con los img de los filtros aplicados-->
-      </div>
-      <div id="contenedor-filtros" class="filtros">
-        <div class="dropdown">
-          <button class="btn btn-outline-danger dropdown-toggle mt-3" type="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Ordenar
-          </button>
-          <ul class="dropdown-menu">
-            <li><a id="mayor" class="dropdown-item dropdown-item-ordenar" href="#">De mayor a menor</a></li>
-            <li><a id="menor" class="dropdown-item dropdown-item-ordenar" href="#">De menor a mayor</a></li>
-          </ul>
-        </div>
-        <button class="btn btn-outline-danger collapsed " type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#categorias" aria-controls="offcanvasExample">
-          categorias
-        </button>
-        <div class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="offcanvasExampleLabel" id="categorias">
-          <div class="offcanvas-header">
-            <h2 class="offcanvas-title" id="offcanvasExampleLabel">Filtros</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="card card-body">
-            <button id="zapato" class="btn btn-outline-danger boton-filtro">Zapatos</button>
-            <button id="zapatilla" class="btn btn-outline-danger boton-filtro">Zapatillas</button>
-            <button id="bota" class="btn btn-outline-danger boton-filtro">Botas</button>
-          </div>
-        </div>
-
-      </div>
-      <!---->
-      <div id="contenedor-productos" class="productos row row-cols-2 row-cols-md-4 g-1">
-        <!--  
-        <div class="col">
-            <div class="card h-100">
-              <img src="../productos/botas/botas-0.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Zapato Berge</h5>
-                <p class="card-text">$2000</p>
-                <span>3 cuotas sin interes de 666</span>
-               <div class="botones">
-                <a  class="btn btn-sm btn-outline-success">Comprar</a>
-                <a class="btn btn-sm btn-outline-dark"><i class="fa-solid fa-cart-shopping"></i></a>
-               </div>
-              </div>
-            </div>
-          </div>-->
-
-      </div>
-    </div>
   </main>
-  <!--FOOTER-->
   <footer class="container-fluid">
     <section class="row row-cols-1 row-cols-md-3 text-center">
       <div>
@@ -206,7 +131,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
-  <script type="module" src="./productos.js"></script>
+  <script src="./final.js"></script>
 </body>
 
 </html>

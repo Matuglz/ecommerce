@@ -67,6 +67,8 @@ const productosDestacados = [
 
 const contenedorProductosDestacados = document.querySelector(".contendor-productos-destacados")
 const contenedorModal = document.querySelector(".modal-comprar-body")
+const alertDeseo = document.querySelector(".alert-agregado")
+const alerta = false
 
 const CARRITO = JSON.parse(localStorage.getItem("carrito")) ||  []
 
@@ -104,7 +106,7 @@ botonesComprar.forEach(boton => {
         let modal = productosDestacados.filter(producto => producto.id == index)
         let nombre = modal[0].titulo
         let imagen = modal[0].imagen;
-                    let id = modal[0].id
+        let id = modal[0].id
         let precio = modal[0].precio
         let talles = modal[0].talles
         let div = document.createElement("div")
@@ -164,17 +166,35 @@ botonesComprar.forEach(boton => {
 
 
             //SELECCIONAR TALLE
+            let copiaCarrito = [...CARRITO]
             let botonesArray = Array.from(botonesTalle)
             let botonSeleccionado = botonesArray.find((boton) => boton.classList.contains("active"))
             let talle = botonSeleccionado.innerHTML
             let cantidad = 1
             let productoPreparado = { nombre,imagen,precio, talle, cantidad,id }
-            CARRITO.push(productoPreparado)
+            let enCarrito = copiaCarrito.find(prod=> prod.id == productoPreparado.id && prod.talle == productoPreparado.talle)
+            if (enCarrito){
+                enCarrito.cantidad = enCarrito.cantidad +1
+            }else{
+                CARRITO.push(productoPreparado)
+            }
             localStorage.setItem("carrito",JSON.stringify(CARRITO))
 
             contenedorModal.classList.add("d-none")
             botonesComprar.forEach(boton => boton.classList.remove("active"))
             contenedorModal.innerHTML=""
+            mostrarAlerta()
         })
     })
 })
+
+function mostrarAlerta() {
+    if (!alerta) {
+        alertDeseo.classList.remove("d-none");
+        setTimeout(() => {
+            alertDeseo.classList.add("d-none");
+        }, 2000);
+    }
+}
+
+
